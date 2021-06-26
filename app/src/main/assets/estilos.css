@@ -1,0 +1,236 @@
+.s {
+    border: solid 1px red;
+}
+html, body {
+    margin:0px;
+}
+.MainCont {
+    display:grid;
+    grid-gap: 0px;
+    grid-template-rows: 50px 30px 40vh auto;
+    grid-template-columns: 100vw;
+    height: 100vh;
+}auto
+
+.titulo {
+    grid-column: 1;
+    grid-row: 1
+}
+.titulo span {
+    font-size: 30px;
+    line-height: 50px;
+}
+.titulo .msg {
+    font-size:15px;
+    float: right;
+    padding-right:10px;
+}
+.holderText {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.holderText textarea {
+    width: 100%;
+    height: 40vh;
+    overflow-wrap: break-word;
+    border: solid red 1px;
+    word-break: break-word;
+    font-size: 11px;
+}
+.menu {
+    grid-column: 1;
+    grid-row: 2;
+
+    display:grid;
+    grid-gap: 0px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 30px;
+    height: 100vh;
+}
+.menu button {
+    border-radius: 0px;
+}
+.menu .activo {
+    box-shadow: -4px -4px 10px inset gray;
+}
+.contenido {
+    grid-column: 1;
+    grid-row: 3;
+}
+.prod {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.prod-tit {
+    padding-left: 3px;
+    color:red;
+    text-transform: capitalize;
+}
+.prod-miss {
+    color: green;
+    text-align: right;
+    padding-right: 10px;
+}
+
+
+.tmp {
+    display: none;
+}
+
+/*
+INICIA POPUP COMPRA
+*/
+#popup-compra {
+    display:none;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f0f8ffcc;
+    border-top: 39vh solid #f0f8ff94;
+    border-bottom: 41vh solid #f0f8ff94;
+    border-left: 10vh solid #f0f8ff94;
+    border-right: 10vh solid #f0f8ff94;
+}
+#compra {
+    background: #f0f8ff;
+    border: solid #c7def3 3px;
+    height: 22vh;
+}
+.popup-compra-footer,
+.popup-compra-tit {
+    text-align: center;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.popup-compra-tit {
+    text-align: center;
+    border-bottom: solid #c7def3 3px;
+    height: 4vh;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+.popup-compra-footer {
+    text-align: center;
+    border-top: solid #c7def3 3px;
+    height: 4vh;
+    font-size: 20px;
+    line-height: 30px;
+}
+.popup-compra-conteo {
+    text-align:center;
+    width:100%;
+}
+.btn {
+    border: solid 3px #c7def3;
+    width: 50px;
+    font-size:70px;
+    text-align: center;
+}
+.currentVal {
+    font-size: 40px;
+    width: 50%;
+    text-align: center;
+}
+/*
+FINALIZA POPUP COMPRA
+*/
+
+
+/*
+INICIA POPUP ADD
+*/
+#popup-add {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f0f8ffcc;
+    border-top: 33vh solid #f0f8ff94;
+    border-bottom: 30vh solid #f0f8ff94;
+    border-left: 10vh solid #f0f8ff94;
+    border-right: 10vh solid #f0f8ff94;
+}
+#add {
+    background: #f0f8ff;
+    border: solid #c7def3 3px;
+    height: 33vh;
+}
+.popup-add-footer,
+.popup-add-tit {
+    text-align: center;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.popup-add-tit {
+    text-align: center;
+    border-bottom: solid #c7def3 3px;
+    height: 4vh;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+.popup-add-footer {
+    text-align: center;
+    border-top: solid #c7def3 3px;
+    height: 4vh;
+    font-size: 20px;
+    line-height: 30px;
+}
+.popup-add-conteo {
+    text-align:center;
+    width:100%;
+}
+.popup-add-input input{
+    width:calc(100% - 14px);
+    margin-left:2px;
+}
+.btn {
+    border: solid 3px #c7def3;
+    width: 50px;
+    font-size:70px;
+    text-align: center;
+}
+.currentVal {
+    font-size: 40px;
+    width: 50%;
+    text-align: center;
+}
+/*
+FINALIZA POPUP ADD
+*/
+
+.hidden {
+    display:none;
+}
+.Consumir {
+    font-size:30px;
+    margin-top: -20px;
+    margin-right: 10px;
+}
+/*
+INICIA + BTN
+*/
+.plusFloat {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background: #6c95f9;
+    font-size: 60px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+/*
+FINALIZA + BTN
+*/

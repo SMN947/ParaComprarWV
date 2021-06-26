@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="MainCont">
+
+        <div class="titulo">
+            <span>Pa'Comprar</span>
+            <span id="msg" class="msg"></span>
+        </div>
+        <div class="menu">
+            <button id="ContPendBtn" onclick="changeTab('ContPend')" class="activo">Pendientes</button>
+            <button id="ContEditBtn" onclick="changeTab('ContEdit')">Editor</button>
+            <button id="ContInvBtn" onclick="changeTab('ContInv')">Inventario</button>
+        </div>
+        <div class="contenido">
+            
+            <div class="prods hidden" id="ContPend">
+                <div class="tmp" id="template-prod">
+                    <div class="prod" onclick="comprarProd('{{nombre}}')">
+                        <div class="prod-tit">
+                            {{nombre}}
+                        </div>
+                        <div class="prod-miss">
+                            {{cantidad}} {{medida}}
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div id="holder-prod"></div>
+            </div>
+
+            <div class="prods hidden" id="ContEdit">
+                <div class="tmp" id="template-edit">
+                    <div class="prod">
+                        <div class="prod-tit">
+                            {{nombre}}
+                        </div>
+                        <div class="prod-miss">
+                            {{cantidad}} {{medida}}
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div id="holder-edit"></div>
+            </div>
+
+            <div class="prods hidden" id="ContInv">
+                <div class="tmp" id="template-inv">
+                    <div class="prod" onclick="consumirProd('{{nombre}}', this.id)" id="{{invId}}">
+                        <div class="prod-tit">
+                            {{nombre}}
+                        </div>
+                        <div class="prod-miss">
+                            {{cantidad}} {{medida}} <button class="Consumir">-</button>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                </div>
+                <div id="holder-inv"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="popup-compra">     
+        <div id="compra">
+            <table id="popup-compra-tb">
+                <tr>
+                    <td class="popup-compra-tit" colspan="3">
+                        <span id="prodTit">PRODTIT</span>
+                    </td>
+                </tr>
+                <tr class="popup-compra-conteo">
+                    <td class="btn min" onclick="adjustAmount(-1)">-</td>
+                    <td><input class="currentVal" id="valorParaComprar" disabled value="1"></td>
+                    <td class="btn add" onclick="adjustAmount(1)">+</td>
+                </tr>
+                <tr>
+                    <td class="popup-compra-footer" colspan="3" onclick="finCompra()">
+                        <span id="prodCancel">CANCELAR</span> | <span id="prodComprar">COMPRAR</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="popup-add" class="hidden">     
+        <div id="add">
+            <table id="popup-add-tb">
+                <tr>
+                    <td class="popup-add-tit" colspan="3">
+                        <span id="addProdTit">PRODTIT</span>
+                    </td>
+                </tr>
+                <tr class="popup-add-input">
+                    <td colspan="3"><input id="addNombre" placeholder="Nombre Producto"></td>
+                </tr>
+                <tr class="popup-add-input">
+                    <td colspan="3"><input id="addMedida" placeholder="Unidad: Libra, Kilo, Bolsa, Barra"></td>
+                </tr>
+                <tr class="popup-add-conteo">
+                    <td class="btn min" onclick="adjustAddAmount(-1)">-</td>
+                    <td><input class="currentVal" id="valorParaAnadir" disabled value="1"></td>
+                    <td class="btn add" onclick="adjustAddAmount(1)">+</td>
+                </tr>
+                <tr>
+                    <td class="popup-add-footer" colspan="3">
+                        <span id="prodCancel" onclick="HideEl('popup-add')">CANCELAR</span> | <span id="prodComprar" onclick="AddToMinStock()">AÑADIR</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+            
+    <div class="plusFloat" id="addMinStock" onclick="showPopUpAdd('Nuevo Producto')">
+        +
+    </div>
+
+</body>
+        <div class="holderText hidden">
+            <textarea id="holderText"></textarea>
+        </div>
+
+<script src="script.js"></script>
+</html>
